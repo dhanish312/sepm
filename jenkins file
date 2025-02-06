@@ -1,0 +1,43 @@
+pipeline {
+    agent any
+
+   
+
+    
+        
+        stage('Compile') {
+            steps {
+                // Compile the Java project using Maven or Gradle
+                script {
+                   
+
+                    // Or for Gradle
+                    // bat'javac d21.java'
+                }
+            }
+        }
+
+        
+
+        stage('Build') {
+            steps {
+                // Package the Java application
+                script {
+                    
+
+                    // Or for Gradle
+                    // bat'java d21.java'
+                }
+            }
+        }
+
+      
+    post {
+        success {
+            echo 'Build and deployment successful!'
+        }
+        failure {
+            echo 'Build or deployment failed!'
+        }
+    }
+}
